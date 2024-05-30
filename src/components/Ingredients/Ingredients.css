@@ -1,0 +1,27 @@
+.ingredient {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: space-between;
+}
+
+.ingredient-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ingredient-img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.ingredient-name {
+  margin-left: 20px;
+}
+
+.ingredient-count {
+  margin-right: 20px;
+}
