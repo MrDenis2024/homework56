@@ -3,11 +3,13 @@ import {Ingredient, IngredientQuantity} from '../../types';
 import {useState} from 'react';
 import Burger from '../../components/Bureger/Burger';
 import IngredientsList from '../../components/IngredientsList/IngredientsList';
+import Price from '../../components/Price/Price';
 
 import meatImage from '../../assets/meat.jpg';
 import saladImage from '../../assets/salad.jpg';
 import baconImage from '../../assets/bacon.jpg';
 import cheeseImage from '../../assets/cheese.jpg';
+
 
 const INGREDIENTS: Ingredient[] = [
   {name: 'Meat', price: 80, image: meatImage},
@@ -49,12 +51,13 @@ const App = () => {
   return (
     <div className='app'>
       <div className='ingredients-info'>
-        <h2>Ингрединты</h2>
+        <h2>Ингредиенты</h2>
         <IngredientsList allIngredient={INGREDIENTS} ingredientCount={ingredients} addIngredient={addIngredients} removeIngredient={removeIngredients}/>
       </div>
         <div className='ingredient-burger'>
           <h2>Бургер</h2>
           <Burger ingredientsCount={ingredients} />
+          <Price ingredientsCount={ingredients} ingredients={INGREDIENTS} />
         </div>
     </div>
   );
