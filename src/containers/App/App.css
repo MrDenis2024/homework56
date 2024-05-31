@@ -7,10 +7,16 @@
 
 .app {
   display: flex;
+  justify-content: space-between;
 }
 
 .ingredients-info {
   flex-basis: 50%;
+}
+
+.ingredient-burger {
+  display: flex;
+  flex-direction: column;
 }
 
 .ingredients-list {

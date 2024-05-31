@@ -5,18 +5,20 @@ import './Ingredients.css';
 interface Props {
   ingredients: Ingredient;
   count: number;
+  onAddIngredient: React.MouseEventHandler;
+  onRemoveIngredient: React.MouseEventHandler;
 }
 
-const Ingredients: React.FC<Props> = ({ingredients, count, }) => {
+const Ingredients: React.FC<Props> = ({ingredients, count, onAddIngredient, onRemoveIngredient}) => {
   return (
     <div className='ingredient'>
-      <div className='ingredient-info'>
+      <div className='ingredient-info' onClick={onAddIngredient}>
         <img className='ingredient-img' src={ingredients.image} alt={ingredients.name}/>
         <span className='ingredient-name'>{ingredients.name}</span>
       </div>
       <div>
         <span className='ingredient-count'>x{count}</span>
-        <button>Удалить ингредиет</button>
+        {count > 0 ? <button className='ingredient-btn' onClick={onRemoveIngredient}>Удалить ингредиет</button> : null}
       </div>
     </div>
   );
